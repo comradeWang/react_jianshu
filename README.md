@@ -1,44 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React仿简书项目
 
-## Available Scripts
+> 使用react-create-app构建项目，仿简书页面样式进行开发的仿写项目
 
-In the project directory, you can run:
+### 引入关键组件
 
-### `npm start`
+在react-create-app构建完成之后，会自带几个包，用来支持react语法的书写。
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```json
+"react": "^16.6.3",
+"react-dom": "^16.6.3",
+"react-scripts": "2.1.1",
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+下来，我们就需要自己引入一些开发时需要的包了。
 
-### `npm test`
+[Redux](https://github.com/reduxjs/redux): Redux 是 JavaScript 状态容器，提供可预测化的状态管理。([GitBook中文文档](https://www.redux.org.cn/))
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[react-redux](https://github.com/reduxjs/react-redux):  [Redux](https://github.com/reactjs/redux) 官方提供的 React 绑定库。 具有高效且灵活的特性。([GitBook中文文档](http://cn.redux.js.org/docs/react-redux/))
 
-### `npm run build`
+[react-transition-group](https://github.com/reactjs/react-transition-group): React官方实现动画效果的插件。([一篇文章](https://segmentfault.com/a/1190000015487495))
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[styled-components](https://github.com/styled-components/styled-components): 利用标记的模板文字（最近添加到JavaScript）和CSS的强大功能，样式组件允许您编写实际的CSS代码来设置组件的样式。([官网文档](https://www.styled-components.com/docs))
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+另外还有一些没有用上的先不列举。
