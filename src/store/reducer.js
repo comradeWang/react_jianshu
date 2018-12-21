@@ -4,7 +4,7 @@
  * @Time: 16:41
  * @Description:  $
  */
-import {combineReducers} from "redux";
+import {combineReducers} from "redux-immutable";
 
 import HeaderReducer from '../common/header/store/reducer'
 

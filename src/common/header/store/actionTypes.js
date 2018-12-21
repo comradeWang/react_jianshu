@@ -4,4 +4,6 @@
  * @Time: 10:45
  * @Description:  $
  */
-export const HEADER_INPUT_FOCUSED = 'header/focused_input';
+export const HANDLE_INPUT_FOCUSED = 'header/HANDLE_INPUT_FOCUSED';
+export const HANDLE_INPUT_BLUR = 'header/HANDLE_INPUT_BLUR';
+export const CHANGE_LIST = 'header/CHANGE_LIST';
