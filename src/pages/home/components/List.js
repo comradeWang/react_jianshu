@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {ListItem,ListInfo} from "../style";
+import {connect} from "react-redux";
 
 class List extends Component {
   constructor(props) {
@@ -7,12 +9,32 @@ class List extends Component {
   }
 
   render() {
+    const {articleList} = this.props;
     return (
-      <div className="List">
-        列表
+      <div>
+        {articleList.map((item,index) => (
+          <ListItem key={item.get('id')}>
+            <img
+              className='img-list'
+              src={item.get('imgUrl')}
+              alt=""/>
+            <ListInfo>
+              <h3 className='title'>{item.get('title')}</h3>
+              <p className='desc'>
+                {item.get('desc')}
+              </p>
+            </ListInfo>
+          </ListItem>
+        ))}
       </div>
     );
   }
 }
 
-export default List;
+const mapState = (state) => ({
+  articleList: state.getIn(['home', 'articleList'])
+});
+const mapDispatch = dispatch => ({
+});
+
+export default connect(mapState,mapDispatch)(List);
