@@ -14,12 +14,6 @@ export const getInputFocused = () => ({
 export const getInputBlur = () => ({
   type:actionTypes.HANDLE_INPUT_BLUR,
 });
-export const changeHeaderList = (data) =>(
-  {
-    type: actionTypes.CHANGE_LIST,
-    data: fromJS(data)
-  }
-)
 /**
 * @author: WangXinYu
 * @describe: ajax获取header热门搜索推荐列表
@@ -28,7 +22,6 @@ export const changeHeaderList = (data) =>(
 export const getList = () =>{
   return dispatch =>{
     axios.get('/api/headerList.json').then(value => {
-      console.log(value);
       const action = changeHeaderList(value.data)
       dispatch(action)
     }).catch(reason => {
@@ -36,3 +29,38 @@ export const getList = () =>{
     })
   }
 }
+const changeHeaderList = (data) => (
+  {
+    type: actionTypes.CHANGE_LIST,
+    data: fromJS(data),
+    totalPage: Math.ceil(data.length / 10)
+
+  }
+);
+/**
+ * @author: WangXinYu
+ * @describe: 鼠标进入热门搜索框事件
+ * @create: 2018/12/24 10:48
+ **/
+export const mouseEnter = () => ({
+  type: actionTypes.MOUSE_ENTER
+});
+
+/**
+ * @author: WangXinYu
+ * @describe:
+ * @create: 2018/12/24 11:07
+ **/
+export const mouseLeave = () => ({
+  type: actionTypes.MOUSE_LEAVE
+});
+
+/**
+* @author: WangXinYu
+* @describe: 换一批事件触发
+* @create: 2018/12/24 11:28
+**/
+export const handleChange = (page) => ({
+  type: actionTypes.HANDLE_CHANGE,
+  page
+})
