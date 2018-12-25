@@ -26,6 +26,7 @@ class Topic extends Component {
 }
 
 const mapStateToProps = (state) => ({});
-cosst mapDispatchToProps = () =>
+const mapDispatchToProps = () => {
+};
 
 export default connect(mapStateToProps,mapDispatchToProps)(Topic);
