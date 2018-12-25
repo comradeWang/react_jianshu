@@ -32,4 +32,10 @@
 
 [redux-immutable](https://www.npmjs.com/package/redux-immutable): 令redux的state保持一致，都为不可更改的数据。
 
+[redux-thunk](https://github.com/reduxjs/redux-thunk): redux 的中间件。
+
+[axios](https://www.kancloud.cn/yunye/axios/234845): 这个不解释。
+
+[react-router-dom](https://github.com/ReactTraining/react-router): react的路由。
+
 另外还有一些没有用上的先不列举。	

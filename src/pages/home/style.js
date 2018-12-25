@@ -25,3 +25,33 @@ export const HomeRight = styled.div`
   width: 240px;
   float: right;
 `;
+
+
+/*Topic组件样式开始*/
+export const TopicWrapper = styled.div`
+  padding: 20px 0 10px 0;
+  overflow: hidden;
+  margin-left: -27px;
+`;
+
+export const TopicItem = styled.div`
+  float: left;
+  background: #f7f7f7;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid #dcdcdc;
+  font-size: 12px;
+  color: #000;
+  border-radius: 4px ;
+  padding-right: 10px;
+  margin-left: 27px;
+  margin-bottom: 18px;
+  .topic-pic{
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+  }
+`;
+/*Topic组件样式结束*/
