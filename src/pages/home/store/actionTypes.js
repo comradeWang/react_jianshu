@@ -4,3 +4,4 @@
  * @Time: 16:20
  * @Description:  $
  */
+export const CHANGE_HOME_DATA = 'home/CHANGE_HOME_DATA';

@@ -1,0 +1,68 @@
+{
+  "code": 200,
+  "data": {
+    "topicList": [
+      {
+        "id": 1,
+        "title": "社会热点",
+        "imgUrl": "//upload.jianshu.io/collections/images/261938/man-hands-reading-boy-large.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+      },
+      {
+        "id": 2,
+        "title": "手绘",
+        "imgUrl": "//upload.jianshu.io/collections/images/261938/man-hands-reading-boy-large.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+      }
+    ],
+    "articleList": [
+      {
+        "id": 1,
+        "title": "一代才女诗意的生活（二）",
+        "desc": "一代才女诗意的生活（一） 夕阳红十三妹阿姨的原创诗画 （一）     《庆》 松鹤延年苏绣品，平铺框内挂门前。 栩栩如生入双眼，吉祥进福增添岁。...",
+        "imgUrl": "//upload-images.jianshu.io/upload_images/9764856-952904a17bbb50f4.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+      },
+      {
+        "id": 2,
+        "title": "娇妻似蛊",
+        "desc": "      第1章     “孟韩烨，你如果想要我就别蒙上我的眼睛！”   这是孟娇第三次拒绝孟韩烨，因为她希望亲眼看一看自己的丈夫怜惜她的样子，而不是他初...\n",
+        "imgUrl": "//upload-images.jianshu.io/upload_images/12709485-775d5c16bf712212.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+      }
+    ],
+    "recommendList": [
+      {
+        "id": 1,
+        "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png",
+        "url": "https://www.jianshu.com/trending/weekly?utm_medium=index-banner-s&utm_source=desktop"
+      },
+      {
+        "id": 2,
+        "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png",
+        "url": "https://www.jianshu.com/trending/monthly?utm_medium=index-banner-s&utm_source=desktop"
+      },
+      {
+        "id": 3,
+        "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png",
+        "url": "https://www.jianshu.com/mobile/books?category_id=284"
+      },
+      {
+        "id": 4,
+        "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png",
+        "url": "https://www.jianshu.com/publications"
+      },
+      {
+        "id": 5,
+        "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png",
+        "url": "https://www.jianshu.com/c/e048f1a72e3d?utm_medium=index-banner-s&utm_source=desktop"
+      }
+    ],
+    "writerList": [
+      {
+        "id": 1,
+        "name": "晖宗聊绘画",
+        "personUrl": "https://www.jianshu.com/u/f666aefcc318?utm_source=desktop&utm_medium=index-users",
+        "avatarUrl": "http://upload.jianshu.io/users/upload_avatars/4287007/b7b9c810-069e-4385-aec7-1823e94ee43d.jpg",
+        "totalWord": "168.2k",
+        "totalLike": "2k"
+      }
+    ]
+  }
+}

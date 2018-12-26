@@ -22,7 +22,7 @@ export const HomeLeft = styled.div`
   }
 `;
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280px;
   float: right;
 `;
 
@@ -91,3 +91,132 @@ export const ListInfo  = styled.div`
   }
 `;
 /*List组件样式结束*/
+
+/*Recommend组件样式开始*/
+
+export const RecommendWrapper = styled.div`
+  padding-top: 30px;
+  padding-bottom: 4px;
+  min-height: 228px;
+  margin-top: -4px;
+`;
+export const RecommendItem = styled.div`
+  margin-bottom: 5px;
+  a{
+    box-sizing: border-box;
+  }
+  .banner{
+    width: 100%;
+    min-height: 50px;
+    border-radius: 4px;
+  }
+`;
+export const DownloadApp = styled.a`
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+  display: block;
+  .qrCode{
+    width: 60px;
+    height: 60px;
+    opacity: .85;
+    vertical-align: middle;
+  }
+`;
+export const DownloadInfo = styled.div`
+  display: inline-block;
+  margin-left: 7px;
+  vertical-align: middle;
+  .title{
+    font-size: 15px;
+    color: #333;
+  }
+  .desc{
+    font-size: 13px;
+    margin-top: 6px;
+    color: #999 !important;
+  }
+`;
+/*Recommend组件样式结束*/
+
+/*Writer组件样式开始*/
+export const WriterWrapper = styled.div`
+  position: relative;
+  background: url(${props => props.imgUrl});
+`;
+export const WriterHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #969696;
+  .change{
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    &:hover{
+      color: #2f2f2f;
+    }
+  }
+`;
+export const WriterContent = styled.div`
+  margin-top: 20px;
+  .seeAll{
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    display: block;
+    margin-top: 20px;
+    padding: 7px 7px 7px 12px;
+    text-decoration: none;
+  }
+`;
+export const WriterItem = styled.div`
+  position: relative;
+  overflow: hidden;
+  display: block;
+  .avatar{
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    display: inline-block;
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      vertical-align: middle;
+    }
+  }
+  .info{
+    display: inline-block;
+    vertical-align: middle;
+    .name{
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .meta{
+      margin-top: 5px;
+      font-size: 12px;
+      color: #969696;
+    }
+    .follow{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      margin-top: 5px;
+      padding: 0;
+      font-size: 13px;
+      color: #42c02e;
+      cursor: pointer;
+    }
+  }
+`;
+/*Writer组件样式结束*/
