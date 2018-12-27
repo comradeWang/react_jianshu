@@ -14,7 +14,7 @@ class Recommend extends Component {
       <RecommendWrapper>
         {recommendList.map( item => (
           <RecommendItem key={item.get('id')}>
-            <a target='_blank' href={item.get('url')}>
+            <a target='_blank' rel="noopener noreferrer" href={item.get('url')}>
               <img
                 className='banner'
                 src={item.get('imgUrl')}

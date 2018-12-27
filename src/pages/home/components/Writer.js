@@ -26,6 +26,7 @@ class Writer extends Component {
             <WriterItem key={item.get('id')}>
               <a
                 target='_blank'
+                rel="noopener noreferrer"
                 href={item.get('personUrl')}
                 className='avatar'
               >
@@ -34,6 +35,7 @@ class Writer extends Component {
               <div className='info'>
                 <a
                   target='_blank'
+                  rel="noopener noreferrer"
                   href={item.get('personUrl')}
                   className='name'
                 >

@@ -26,7 +26,18 @@ export const HomeRight = styled.div`
   float: right;
 `;
 
-
+export const BackToTop = styled.div`
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 12px;
+  cursor: pointer;
+`;
 /*Topic组件样式开始*/
 export const TopicWrapper = styled.div`
   padding: 20px 0 10px 0;
@@ -89,6 +100,17 @@ export const ListInfo  = styled.div`
     line-height: 24px;
     color: #999;
   }
+`;
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin: 30px 0;
+  cursor: pointer;
 `;
 /*List组件样式结束*/
 

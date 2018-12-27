@@ -11,7 +11,9 @@ const defaultState = fromJS({
   topicList: [],
   articleList: [],
   recommendList: [],
-  writerList: []
+  writerList: [],
+  articlePage: 1,
+  showScroller: false
 });
 
 export default (state = defaultState, action) => {
@@ -23,6 +25,11 @@ export default (state = defaultState, action) => {
         recommendList: fromJS(action.recommendList),
         writerList: fromJS(action.writerList),
       });
+    case actionTypes.LOAD_MORE_ARTICLE:
+      const newList = state.get('articleList').concat(fromJS(action.newArticleList));
+      return state.merge({'articleList': newList,articlePage: action.articlePage});
+    case actionTypes.TOGGLE_SCROLLER_SHOW:
+      return state.set(`showScroller`,action.flag);
     default:
       return state;
   }

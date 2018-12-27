@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {ListItem,ListInfo} from "../style";
+import {ListItem,ListInfo,LoadMore} from "../style";
 import {connect} from "react-redux";
+import {actionCreators} from "../store";
 
 class List extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class List extends Component {
   }
 
   render() {
-    const {articleList} = this.props;
+    const {articleList,articlePage} = this.props;
     return (
       <div>
         {articleList.map((item,index) => (
@@ -26,15 +27,20 @@ class List extends Component {
             </ListInfo>
           </ListItem>
         ))}
+        <LoadMore onClick={()=>this.props.getMoreList(articlePage)}>更多文字</LoadMore>
       </div>
     );
   }
 }
 
 const mapState = (state) => ({
-  articleList: state.getIn(['home', 'articleList'])
+  articleList: state.getIn(['home', 'articleList']),
+  articlePage: state.getIn(['home', 'articlePage']),
 });
 const mapDispatch = dispatch => ({
+  getMoreList(articlePage){
+    dispatch(actionCreators.getMoreList(articlePage));
+  }
 });
 
 export default connect(mapState,mapDispatch)(List);
