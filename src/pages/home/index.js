@@ -4,7 +4,7 @@
  * @Time: 16:07
  * @Description:  $
  */
-import React from "react";
+import React, {PureComponent} from "react";
 import List from "./components/List";
 import Recommend from "./components/Recommend";
 import Topic from "./components/Topic";
@@ -14,7 +14,10 @@ import {actionCreators} from "./store/index";
 import {HomeWrapper, HomeLeft, HomeRight, BackToTop} from "./style";
 import {connect} from "react-redux";
 
-class Home extends React.Component {
+class Home extends PureComponent {
+
+
+
   render() {
     return (
       <HomeWrapper>
