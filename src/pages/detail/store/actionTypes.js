@@ -4,3 +4,5 @@
  * @Time: 16:20
  * @Description:  $
  */
+
+export const CHANGE_DETAIL = 'detail/CHANGE_DETAIL';

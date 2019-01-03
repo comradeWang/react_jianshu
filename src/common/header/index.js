@@ -21,7 +21,8 @@ import {
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
 import { actionCreators } from "./store";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { actionCreators as LoginActionCreators } from "../../pages/login/store";
 
 // 无状态组件，提升性能
 // const Header = (props) =>(
@@ -37,7 +38,8 @@ class Header extends Component {
       totalPage,
       handleMouseEnter,
       handleMouseLeave,
-      handleChange
+      handleChange,
+      isLogin
     } = this.props;
     // 显示或隐藏搜索提示框
     const getSearchListArea = () => {
@@ -84,13 +86,21 @@ class Header extends Component {
     };
     return (
       <HeaderWrapper>
-        <Link to={'/'}>
+        <Link to={"/"}>
           <Logo />
         </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
-          <NavItem className="right">登录</NavItem>
+          {isLogin ? (
+            <NavItem className="right" onClick={this.props.loginOut}>
+              退出
+            </NavItem>
+          ) : (
+            <Link to={"/Login"}>
+              <NavItem className="right">登录</NavItem>
+            </Link>
+          )}
           <NavItem className="right">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
@@ -98,7 +108,9 @@ class Header extends Component {
             <CSSTransition in={focused} timeout={500} classNames="slide">
               <NavSearch
                 className={focused ? "focused" : ""}
-                onFocus={() =>{this.props.handleNavSearchFocused(headerList)}}
+                onFocus={() => {
+                  this.props.handleNavSearchFocused(headerList);
+                }}
                 onBlur={this.props.handleNavSearchBlur}
               />
             </CSSTransition>
@@ -109,10 +121,12 @@ class Header extends Component {
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className="written">
-            <i className="iconfont">&#xe6af;</i>
-            写文章
-          </Button>
+          <Link to={'/Write'}>
+            <Button className="written">
+              <i className="iconfont">&#xe6af;</i>
+              写文章
+            </Button>
+          </Link>
           <Button className="reg">注册</Button>
         </Addition>
       </HeaderWrapper>
@@ -124,7 +138,8 @@ const mapStateToProps = state => ({
   headerList: state.getIn(["header", "headerList"]), // get('header').get('focused')
   page: state.getIn(["header", "page"]),
   totalPage: state.getIn(["header", "totalPage"]),
-  mouseIn: state.getIn(["header", "mouseIn"])
+  mouseIn: state.getIn(["header", "mouseIn"]),
+  isLogin: state.getIn(["login", "isLogin"])
 });
 const mapDispatchToProps = dispatch => ({
   handleNavSearchFocused(headerList) {
@@ -157,6 +172,9 @@ const mapDispatchToProps = dispatch => ({
     } else {
       dispatch(actionCreators.handleChange(1));
     }
+  },
+  loginOut() {
+    dispatch(LoginActionCreators.loginOut());
   }
 });
 export default connect(

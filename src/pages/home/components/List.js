@@ -15,7 +15,8 @@ class List extends PureComponent {
     return (
       <div>
         {articleList.map((item, index) => (
-          <Link to={"/Detail"}>
+          /*页面之间传值方法一：动态路由 需要将App.js中的路由标签后加上 /:id*/
+          <Link to={"/Detail/"+item.get('id')} key={item.get('id')}>
             <ListItem key={item.get("id")}>
               <img className="img-list" src={item.get("imgUrl")} alt="" />
               <ListInfo>

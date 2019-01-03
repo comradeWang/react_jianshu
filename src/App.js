@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom"; // 引入路�
 import Header from "./common/header"; // 引入header组件
 import Detail from "./pages/detail";
 import Home from "./pages/home";
-
+import Login from "./pages/login"
+import Write from "./pages/write"
 class App extends Component {
   render() {
     return (
@@ -19,7 +20,9 @@ class App extends Component {
             <div>
               <Header />
               <Route path="/" exact component={Home} />
-              <Route path="/Detail" exact component={Detail} />
+              <Route path="/Detail/:id" exact component={Detail} />
+              <Route path="/Login" exact component={Login} />
+              <Route path="/Write" exact component={Write} />
             </div>
           </Router>
         </div>

@@ -13,13 +13,17 @@ import {
   DetailArticle,
   Ad
 } from "./style";
+import { connect } from "react-redux";
+import {actionCreators} from "./store";
 
 class Detail extends React.Component {
   render() {
+    console.log(this.props)
+    const { content,title } = this.props;
     return (
       <DetailWrapper>
         <DetailContent>
-          <DetailTitle>我为什么不看好赵丽颖冯绍峰的婚姻？</DetailTitle>
+          <DetailTitle>{title}</DetailTitle>
           <DetailAuthor>
             <a
               href="https://www.jianshu.com/u/6cc14512040a"
@@ -42,8 +46,7 @@ class Detail extends React.Component {
               </div>
             </div>
           </DetailAuthor>
-          <DetailArticle>
-          </DetailArticle>
+          <DetailArticle dangerouslySetInnerHTML={{ __html: content }} />
         </DetailContent>
         <Ad
           jumpUrl={"https://www.jianshu.com/apps"}
@@ -54,6 +57,23 @@ class Detail extends React.Component {
       </DetailWrapper>
     );
   }
+  componentDidMount() {
+    this.props.getDetail(this.props.match.params.id);
+  }
 }
 
-export default Detail;
+const mapState = state => ({
+  title: state.getIn(['detail', 'title']),
+  content: state.getIn(["detail", "content"])
+});
+const mapDispatch = dispatch => ({
+  getDetail(id){
+    dispatch(actionCreators.getDetail(id));
+  }
+
+
+});
+export default connect(
+  mapState,
+  mapDispatch
+)(Detail);
