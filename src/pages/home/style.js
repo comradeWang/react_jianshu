@@ -89,6 +89,7 @@ export const ListInfo  = styled.div`
     font-weight: 700;
     line-height: 1.5;
     cursor: pointer;
+    color: #333;
     transition: all .4s ease-in-out;
     &:hover{
       text-decoration: underline;

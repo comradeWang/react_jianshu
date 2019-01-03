@@ -21,6 +21,7 @@ import {
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
 import { actionCreators } from "./store";
+import {Link} from "react-router-dom";
 
 // 无状态组件，提升性能
 // const Header = (props) =>(
@@ -83,7 +84,9 @@ class Header extends Component {
     };
     return (
       <HeaderWrapper>
-        <Logo href="/" />
+        <Link to={'/'}>
+          <Logo />
+        </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>

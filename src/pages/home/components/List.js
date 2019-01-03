@@ -1,7 +1,8 @@
-import React, {PureComponent} from 'react';
-import {ListItem,ListInfo,LoadMore} from "../style";
-import {connect} from "react-redux";
-import {actionCreators} from "../store";
+import React, { PureComponent } from "react";
+import { ListItem, ListInfo, LoadMore } from "../style";
+import { connect } from "react-redux";
+import { actionCreators } from "../store";
+import { Link } from "react-router-dom";
 
 class List extends PureComponent {
   constructor(props) {
@@ -10,37 +11,39 @@ class List extends PureComponent {
   }
 
   render() {
-    const {articleList,articlePage} = this.props;
+    const { articleList, articlePage } = this.props;
     return (
       <div>
-        {articleList.map((item,index) => (
-          <ListItem key={item.get('id')}>
-            <img
-              className='img-list'
-              src={item.get('imgUrl')}
-              alt=""/>
-            <ListInfo>
-              <h3 className='title'>{item.get('title')}</h3>
-              <p className='desc'>
-                {item.get('desc')}
-              </p>
-            </ListInfo>
-          </ListItem>
+        {articleList.map((item, index) => (
+          <Link to={"/Detail"}>
+            <ListItem key={item.get("id")}>
+              <img className="img-list" src={item.get("imgUrl")} alt="" />
+              <ListInfo>
+                <h3 className="title">{item.get("title")}</h3>
+                <p className="desc">{item.get("desc")}</p>
+              </ListInfo>
+            </ListItem>
+          </Link>
         ))}
-        <LoadMore onClick={()=>this.props.getMoreList(articlePage)}>更多文字</LoadMore>
+        <LoadMore onClick={() => this.props.getMoreList(articlePage)}>
+          更多文字
+        </LoadMore>
       </div>
     );
   }
 }
 
-const mapState = (state) => ({
-  articleList: state.getIn(['home', 'articleList']),
-  articlePage: state.getIn(['home', 'articlePage']),
+const mapState = state => ({
+  articleList: state.getIn(["home", "articleList"]),
+  articlePage: state.getIn(["home", "articlePage"])
 });
 const mapDispatch = dispatch => ({
-  getMoreList(articlePage){
+  getMoreList(articlePage) {
     dispatch(actionCreators.getMoreList(articlePage));
   }
 });
 
-export default connect(mapState,mapDispatch)(List);
+export default connect(
+  mapState,
+  mapDispatch
+)(List);
